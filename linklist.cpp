@@ -76,6 +76,30 @@ class linklist
     }
 
     
+    // this is for delete last node in singly link list
+    
+        void pop(){
+            if (start == NULL){
+                cout<<"the link list is allready empty "<<endl;
+            }
+            else
+            {
+                struct node *tmp = start;
+                struct node *tmp2 = start;
+
+
+                while (tmp->next != NULL)
+                {
+                    tmp2 = tmp;
+                    tmp = tmp->next;
+                }
+                tmp2->next = NULL;
+                free(tmp);  // use for free memory loacation
+                tmp = NULL;
+            }
+            
+        }
+    
 
     // static void  display (node *start)  // we take here start beacuse in this we use recursion
     // {
